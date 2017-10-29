@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<div
+  className="dragon-curve-controls"
+>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Draw Curve
+    </button>
+  </div>
+  <div
+    className="dragon-curve-controls-row"
+  >
+    <div>
+      <label>
+        Iterations:
+         
+        <input
+          className="dragon-curve-iterations"
+          onChange={[Function]}
+          type="text"
+          value="12"
+        />
+      </label>
+    </div>
+    <div>
+      Color Mode:
+       
+      <select
+        className="dragon-curve-color-mode"
+        onChange={[Function]}
+        value="rainbow"
+      >
+        <option
+          value="rainbow"
+        >
+          Rainbow
+        </option>
+        <option
+          value="contrast"
+        >
+          Contrast
+        </option>
+        <option
+          value="black"
+        >
+          Black
+        </option>
+      </select>
+    </div>
+    <div>
+      <label>
+        Use Animation:
+         
+        <input
+          checked={true}
+          className="dragon-curve-animation-checkbox"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>
+  <div
+    className="dragon-curve-controls-row"
+  >
+    <div>
+      Number of Curves:
+       
+      <select
+        className="dragon-curve-number-of-curves"
+        onChange={[Function]}
+        value={1}
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+      </select>
+    </div>
+    <div>
+      <label>
+        Iteration to Track
+         
+        <input
+          className="dragon-curve-iteration-to-track"
+          onChange={[Function]}
+          type="text"
+          value="0"
+        />
+      </label>
+    </div>
+    <div />
+  </div>
+</div>
+`;

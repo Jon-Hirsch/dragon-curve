@@ -1,18 +1,11 @@
 export default function dragonCurveScript(
-  container,
+  context,
   iterations,
   iterationToTrack,
   colorMode,
   numCurves,
   useAnimation
 ) {
-  container.innerHTML = '';
-  const canvas = document.createElement('canvas');
-  canvas.width = 800;
-  canvas.height = 800;
-  container.appendChild(canvas);
-
-  const context = canvas.getContext('2d');
   context.fillStyle = colorMode === 'black' ? '#FFF' : '#202020';
   context.fillRect(0, 0, 800, 800);
   context.lineWidth = 1;
@@ -106,7 +99,7 @@ function drawCurve(
       deltaY += width;
     } else if (angle === 180) {
       deltaX -= width;
-    } else if (angle === 270) {
+    } else {
       deltaY -= width;
     }
     context.moveTo(x, y);

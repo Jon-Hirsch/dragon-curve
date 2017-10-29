@@ -7,4 +7,40 @@
   canvas {
     border: solid #FFF 1px;
   }
+
+  .dragon-curve-controls {
+    margin-top: 2px;
+    padding: 5px;
+    font-size: 18px;
+
+    input {
+      width: 25px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 5px;
+      button {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+
+    .dragon-curve-controls-row {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      div {
+        width: 33%;
+        text-align: center;
+        &:first-child {
+          text-align: left;
+        }
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+
+  }
 }
