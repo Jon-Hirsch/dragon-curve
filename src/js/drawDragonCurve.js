@@ -38,6 +38,7 @@ function drawCurve(
   let sequence = getSequence(iterations);
   let colors = getColors(iterations, colorMode);
   let trackAllIterations = !iterationToTrack;
+  iterationToTrack = trackAllIterations ? 1 : iterationToTrack;
   let width = 700;
   width /= 1.5;
   for (let i = 0; i <= iterations; i++) {
@@ -81,6 +82,7 @@ function drawCurve(
       context.beginPath();
       currentColor = (currentColor + 1) % colors.length;
       context.strokeStyle = colors[currentColor];
+
       if (trackAllIterations) {
         iterationToTrack++;
       }
@@ -112,7 +114,7 @@ function drawCurve(
 function getColors(iterations, colorMode) {
   if (colorMode === 'black') return [].fill('#000', iterations);
   let colors = [];
-  let frequency = 0.4;
+  let frequency = 0.6;
   for (let index = 0; index < iterations; index++) {
     const i =
       colorMode === 'contrast' && index % 2 ? iterations - index : index;
@@ -124,7 +126,7 @@ function getColors(iterations, colorMode) {
     g = g.length < 2 ? '0' + g : g.substr(0, 2);
     b = b.length < 2 ? '0' + b : b.substr(0, 2);
 
-    colors.push('#' + r + b + g);
+    colors.push('#' + r + g + b);
   }
   return colors;
 }
