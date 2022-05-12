@@ -1,5 +1,7 @@
 export default function dragonCurveScript(
   context,
+  width,
+  height,
   iterations,
   iterationToTrack,
   colorMode,
@@ -7,13 +9,15 @@ export default function dragonCurveScript(
   useAnimation
 ) {
   context.fillStyle = colorMode === 'black' ? '#FFF' : '#202020';
-  context.fillRect(0, 0, 800, 800);
+  context.fillRect(0, 0, width, height);
   context.lineWidth = 1;
   let startAngle = 0;
 
   for (let i = 0; i < numCurves; i++) {
     drawCurve(
       context,
+      width,
+      height,
       iterations,
       startAngle,
       useAnimation,
@@ -26,23 +30,25 @@ export default function dragonCurveScript(
 
 function drawCurve(
   context,
+  width,
+  height,
   iterations,
   angle,
   useAnimation,
   iterationToTrack,
   colorMode
 ) {
-  let x = 400;
-  let y = 400;
+  let x = width/2;
+  let y = height/2;
   let currentColor = 0;
   let sequence = getSequence(iterations);
   let colors = getColors(iterations, colorMode);
   let trackAllIterations = !iterationToTrack;
   iterationToTrack = trackAllIterations ? 1 : iterationToTrack;
-  let width = 700;
-  width /= 1.5;
+  let lineLength = width - 100;
+  lineLength /= 1.5;
   for (let i = 0; i <= iterations; i++) {
-    width /= 1.41421;
+    lineLength /= 1.41421;
   }
 
   if (!useAnimation) {
@@ -96,13 +102,13 @@ function drawCurve(
     let deltaY = y;
 
     if (angle === 0) {
-      deltaX += width;
+      deltaX += lineLength;
     } else if (angle === 90) {
-      deltaY += width;
+      deltaY += lineLength;
     } else if (angle === 180) {
-      deltaX -= width;
+      deltaX -= lineLength;
     } else {
-      deltaY -= width;
+      deltaY -= lineLength;
     }
     context.moveTo(x, y);
     context.lineTo(deltaX, deltaY);

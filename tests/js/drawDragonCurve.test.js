@@ -12,22 +12,22 @@ describe('drawDragonCurve', () => {
   window.requestAnimationFrame = callback => callback();
 
   test('works with black color mode', () => {
-    drawDragonCurve(context, 4, 0, 'black', 1, false);
+    drawDragonCurve(context, 800, 800, 4, 0, 'black', 1, false);
     expect(context.stroke).toHaveBeenCalled();
   });
 
   test('works with rainbow color mode', () => {
-    drawDragonCurve(context, 4, 0, 'rainbow', 1, false);
+    drawDragonCurve(context, 800, 800, 4, 0, 'rainbow', 1, false);
     expect(context.stroke).toHaveBeenCalled();
   });
 
   test('works with contrast color mode', () => {
-    drawDragonCurve(context, 4, 0, 'contrast', 1, false);
+    drawDragonCurve(context, 800, 800, 4, 0, 'contrast', 1, false);
     expect(context.stroke).toHaveBeenCalled();
   });
 
   test('works with animation', () => {
-    drawDragonCurve(context, 4, 1, 'contrast', 1, true);
+    drawDragonCurve(context, 800, 800, 4, 1, 'contrast', 1, true);
     expect(context.stroke).toHaveBeenCalled();
   });
 });
